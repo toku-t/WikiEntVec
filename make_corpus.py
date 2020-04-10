@@ -53,7 +53,7 @@ def main(args):
     logger.info('generating corpus for training')
     n_processed = 0
     with gzip.open(args.cirrus_file, 'rt') as fi, \
-         open(args.output_file, 'wt') as fo:
+         open(args.output_file, 'wt', encoding='utf-8') as fo:
         for line in fi:
             json_item = json.loads(line)
             if 'title' not in json_item:
